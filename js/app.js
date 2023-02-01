@@ -30,8 +30,12 @@ let seattle = {
   },
 
   render: function () {
-    this.generateCookiesPerHour()
+  
+    this.generateCookiesPerHour();
     let salesContainer = document.getElementById('seattleSales');
+    let seattleStore = document.createElement('h2');
+    seattleStore.textContent = 'Seattle';
+    salesContainer.appendChild(seattleStore);
     let ulElement = document.createElement('ul');
     salesContainer.appendChild(ulElement);
     
@@ -52,7 +56,7 @@ let seattle = {
 // Object literal
 let tokyo = {
 // key value pairs
-  name: 'seattleStore',
+  name: 'tokyoStore',
   min: 3,
   max: 24,
   avg: 1.2,
@@ -75,10 +79,13 @@ let tokyo = {
 
     console.log(this.salesByHourArray);
   },
-
+//  To display on the image
   render: function () {
-    this.generateCookiesPerHour()
-    let salesContainer = document.getElementById('seattleSales');
+    this.generateCookiesPerHour();
+    let salesContainer = document.getElementById('tokyoSales');
+    let tokyoStore = document.createElement('h2');
+    tokyoStore.textContent = 'Tokyo';
+    salesContainer.appendChild(tokyoStore);
     let ulElement = document.createElement('ul');
     salesContainer.appendChild(ulElement);
     
@@ -87,7 +94,7 @@ let tokyo = {
       liElement.textContent = `${hours[i]}; ${this.salesByHourArray[i]} cookies`;
       ulElement.appendChild(liElement);
     }
-
+    
       let totalLiElement = document.createElement('li');
       totalLiElement.textContent = `Total: ${this.dailyTotal} cookies`;
       ulElement.appendChild(totalLiElement);
@@ -99,7 +106,7 @@ let tokyo = {
 // Object literal
 let dubai = {
   // key value pairs
-    name: 'seattleStore',
+    name: 'dubaiStore',
     min: 11,
     max: 38,
     avg: 3.7,
@@ -124,8 +131,11 @@ let dubai = {
     },
   
     render: function () {
-      this.generateCookiesPerHour()
-      let salesContainer = document.getElementById('seattleSales');
+      this.generateCookiesPerHour();
+      let salesContainer = document.getElementById('dubaiSales');
+      let dubaiStore = document.createElement('h2');
+      dubaiStore.textContent = 'Dubai';
+      salesContainer.appendChild(dubaiStore);
       let ulElement = document.createElement('ul');
       salesContainer.appendChild(ulElement);
       
@@ -140,12 +150,13 @@ let dubai = {
         ulElement.appendChild(totalLiElement);
       
     },
-  
+
   }
+  
 // Object literal
 let paris = {
   // key value pairs
-    name: 'seattleStore',
+    name: 'parisStore',
     min: 20,
     max: 38,
     avg: 2.3,
@@ -170,11 +181,15 @@ let paris = {
     },
   
     render: function () {
-      this.generateCookiesPerHour()
-      let salesContainer = document.getElementById('seattleSales');
+      this.generateCookiesPerHour();
+      let salesContainer = document.getElementById('parisSales');
+      let parisStore = document.createElement('h2');
+      parisStore.textContent = 'Paris';
+      salesContainer.appendChild(parisStore);
       let ulElement = document.createElement('ul');
       salesContainer.appendChild(ulElement);
-      
+    
+
       for (let i= 0; i < hours.length; i++){
         let liElement = document.createElement('li');
         liElement.textContent = `${hours[i]}; ${this.salesByHourArray[i]} cookies`;
@@ -189,9 +204,9 @@ let paris = {
   
   }
   // Object literal
-let Lima = {
+let lima = {
   // key value pairs
-    name: 'seattleStore',
+    name: 'limaStore',
     min: 2,
     max: 16,
     avg: 4.6,
@@ -216,8 +231,12 @@ let Lima = {
     },
   
     render: function () {
-      this.generateCookiesPerHour()
-      let salesContainer = document.getElementById('seattleSales');
+  
+      this.generateCookiesPerHour();
+      let salesContainer = document.getElementById('limaSales');
+      let limaStore = document.createElement('h2');
+      limaStore.textContent = 'Lima';
+      salesContainer.appendChild(limaStore);
       let ulElement = document.createElement('ul');
       salesContainer.appendChild(ulElement);
       
@@ -237,6 +256,10 @@ let Lima = {
   
 // console.log(seattle.getRandomCustomersPerHour());
 seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
 
 
 
