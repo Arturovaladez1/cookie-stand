@@ -2,15 +2,66 @@
 // Global value outside of method
 let hours = ['6 a.m.','7 a.m.','8 a.m.','9 a.m.','10 a.m.','11 a.m.','12 p.m.','1 p.m.','2 p.m.','3 p.m.','4 p.m.','5 p.m.','6 p.m.','7 p.m.'];
 
-let salesByHourArray: [];
+let cookieSalesTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-function seattle(name) {
-  this.storeName = name;
+
+// Constructor Function
+function Store (location, min, max, avg,) {
   this.location = location;
+  this.min = min;
+  this.max = max;
+  this.avg = avg;
+
+  // Deafaults
   
 
-}
+  // Random Number Generator
+  this.randomNumber = function () {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+    }
 
+   // for loop to obtain cookies sold by hour 
+  this.cookiesSoldByHour = function () {
+    let total = 0;
+    let salesByHourArray = [];
+    let dailyTotal = 0;
+
+    for (let i = 0; i < 15; i ++) {
+      total = Math.ceil (this.randomNumber() * this.avg);
+      salesByHourArray[i] = total;
+      cookieSalesTotal[i] += total;
+      dailyTotal += total;
+      }
+      cookieSalesTotal[14] += dailyTotal;
+      salesByHourArray.push(dailyTotal);
+
+      }
+  }
+
+  
+  
+
+
+// Create a way to get totals
+
+
+let seattle = new Store('Seattle', 23, 65, 6.3);
+seattle.cookiesSoldByHour();
+// console.log(seattle.salesByHourArray);
+
+// let tokyo = new Store('Tokyo', 3, 24, 1.2);
+// tokyo.cookiesSoldByHour();
+
+// let dubai = new Store('Dubai', 11, 38, 3.7);
+// dubai.cookiesSoldByHour();
+
+// let paris = new Store('Paris', 20, 38, 2.3);
+// dubai.cookiesSoldByHour();
+
+// let lima = new Store('Lima', 2, 16, 4.6);
+// lima.cookiesSoldByHour();
+
+// Methods
 
 
 
