@@ -73,7 +73,7 @@ function Store (location, min, max, avg,) {
     }
 
     let totalSales = document.createElement('th');
-    totalSales.innerText = 'Total';
+    totalSales.innerText = 'Daily Total';
     row1.appendChild(totalSales);
   }
 
@@ -82,23 +82,28 @@ function Store (location, min, max, avg,) {
 
 function tableFooter() {
   
+
   let footer = document.createElement('th');
   footer.innerText = 'Totals';
   storeTfoot.appendChild(footer)
-  
+  let grandTotal = 0
   for (let i = 0; i < hours.length; i++){
     let hourlyTotal = 0;
     // console.log(stores.length);
     for (let j = 0; j < stores.length; j++){
       hourlyTotal += stores[j].cookiesPerHour[i];
     } console.log(hourlyTotal);
+      grandTotal += hourlyTotal 
+
     
-      let row = document.createElement('td');
-        row.innerText = hourlyTotal;
-        storeTfoot.appendChild(row);
-    
-    
-  }
+      let cell = document.createElement('td');
+        cell.innerText = hourlyTotal;
+        storeTfoot.appendChild(cell);
+
+  } 
+      let cell = document.createElement('td');
+      cell.innerText = grandTotal;
+      storeTfoot.appendChild(cell);
 }
 
 
