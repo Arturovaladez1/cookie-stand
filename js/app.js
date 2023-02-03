@@ -2,8 +2,13 @@
 // Global value outside of method
 let hours = ['6 a.m.','7 a.m.','8 a.m.','9 a.m.','10 a.m.','11 a.m.','12 p.m.','1 p.m.','2 p.m.','3 p.m.','4 p.m.','5 p.m.','6 p.m.','7 p.m.'];
 
-let cookieSalesTotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let stores = []
 
+// WINDOW TO DOM
+// let storeContainer = document.querySelector('salesTable');
+let storeTbody = document.querySelector('tbody');
+let storeThead = document.querySelector('thead');
+let storeTfoot = document.querySelector('tfoot');
 
 // Constructor Function
 function Store (location, min, max, avg,) {
@@ -11,90 +16,118 @@ function Store (location, min, max, avg,) {
   this.min = min;
   this.max = max;
   this.avg = avg;
-
-  // Deafaults
-  
-
+  this.cookiesPerHour = [];
+  this.total = 0;
   // Random Number Generator
   this.randomNumber = function () {
     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-    }
+  }
 
    // for loop to obtain cookies sold by hour 
   this.cookiesSoldByHour = function () {
-    let total = 0;
-    let salesByHourArray = [];
-    let dailyTotal = 0;
+   
+    for (let i = 0; i < hours.length; i ++) {
+      let total = Math.ceil (this.randomNumber() * this.avg);
+      this.cookiesPerHour.push(total);
+      this.total += total;
+      
+    }
+    
+  
+  }
+  this.renderStore = function (){
+    let row = document.createElement('tr');
+    storeTbody.appendChild(row);
+    
+    let cityName = document.createElement('th');
+    cityName.innerText = this.location;
+    row.appendChild(cityName);
+    
+    for (let i = 0; i < hours.length; i++) {
+      let storeSales = document.createElement('td');
+      storeSales.innerText = this.cookiesPerHour[i];
+      row.appendChild(storeSales);
+    }
+    
+    let cityTotal = document.createElement('th');
+    cityTotal.innerText = this.total;
+    row.appendChild(cityTotal);
+  }
+  stores.push(this);
+}
 
-    for (let i = 0; i < 15; i ++) {
-      total = Math.ceil (this.randomNumber() * this.avg);
-      salesByHourArray[i] = total;
-      cookieSalesTotal[i] += total;
-      dailyTotal += total;
-      }
-      cookieSalesTotal[14] += dailyTotal;
-      salesByHourArray.push(dailyTotal);
+// Header Function
 
-      }
+  function tableHeader() {
+
+    let row1 = document.createElement('tr');
+    storeThead.appendChild(row1);
+    let cityHead = document.createElement('th');
+    cityHead.innerText = 'City';
+    row1.appendChild(cityHead);
+    
+    for (let i = 0; i < hours.length; i ++) {
+      let thElement = document.createElement('th');
+      thElement.innerText = hours[i];
+      row1.appendChild(thElement);
+    }
+
+    let totalSales = document.createElement('th');
+    totalSales.innerText = 'Total';
+    row1.appendChild(totalSales);
   }
 
+
+//Footer function 
+
+function tableFooter() {
   
+  let footer = document.createElement('th');
+  footer.innerText = 'Totals';
+  storeTfoot.appendChild(footer)
   
+  for (let i = 0; i < hours.length; i++){
+    let hourlyTotal = 0;
+    // console.log(stores.length);
+    for (let j = 0; j < stores.length; j++){
+      hourlyTotal += stores[j].cookiesPerHour[i];
+    } console.log(hourlyTotal);
+    
+      let row = document.createElement('td');
+        row.innerText = hourlyTotal;
+        storeTfoot.appendChild(row);
+    
+    
+  }
+}
 
 
-// Create a way to get totals
+
+// Function to render data
+
+new Store('Seattle', 23, 65, 6.3);
+new Store('Tokyo', 3, 24, 1.2);
+new Store('Dubai', 11, 38, 3.7);
+new Store('Paris', 20, 38, 2.3);
+new Store('Lima', 2, 16, 4.6);
+console.log(stores);
+
+for (let i = 0; i < stores.length; i++){
+  stores[i].cookiesSoldByHour();
+  stores[i].renderStore();
+}
+tableHeader();
+tableFooter();
 
 
-let seattle = new Store('Seattle', 23, 65, 6.3);
-seattle.cookiesSoldByHour();
+
+
 // console.log(seattle.salesByHourArray);
 
-// let tokyo = new Store('Tokyo', 3, 24, 1.2);
-// tokyo.cookiesSoldByHour();
 
-// let dubai = new Store('Dubai', 11, 38, 3.7);
-// dubai.cookiesSoldByHour();
-
-// let paris = new Store('Paris', 20, 38, 2.3);
-// dubai.cookiesSoldByHour();
-
-// let lima = new Store('Lima', 2, 16, 4.6);
 // lima.cookiesSoldByHour();
 
 // Methods
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // Object literal
 // let seattle = {
@@ -354,10 +387,3 @@ seattle.cookiesSoldByHour();
 // dubai.render();
 // paris.render();
 // lima.render();
-
-
-
-  
-
-
-
