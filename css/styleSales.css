@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+table {
+  background-color: rgb(183, 82, 28);
+  opacity: 80%;
+  border width: thick;
+  border: solid rgb(213, 128, 0);
+
+}
+
+main {
+  justify-content: center;
+  margin: auto;
+  width: 50vw;
+}
+
+.header h1 {
+  text text-align: center;
+  text color
+}
