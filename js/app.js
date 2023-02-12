@@ -125,6 +125,24 @@ tableHeader();
 tableFooter();
 
 
+let form = document.querySelector('form');
+let handleSubmit = function(event){
+  event.preventDefault();
+let storeName = event.target.Add.value;
+let storeMin = parseInt(event.target.Min.value);
+let storeMax = parseInt(event.target.Max.value);
+let storeAvg = parseInt(event.target.Avg.value);
+
+let newStoreLocation = new Store( storeName,storeMin,storeMax,storeAvg);
+stores.push(newStoreLocation);
+newStoreLocation.randomNumber();
+newStoreLocation.cookiesSoldByHour();
+newStoreLocation.renderStore();
+};
+form.addEventListener('submit', handleSubmit);
+
+console.log(stores[5]);
+
 
 
 // console.log(seattle.salesByHourArray);
