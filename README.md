@@ -2,4 +2,4 @@
 
 ## Lighthouse report
 
-[LightHouse](/img/lightHouse.png)
+- [LightHouse](/img/lightHouse.png)
