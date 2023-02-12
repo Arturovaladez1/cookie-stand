@@ -17,12 +17,11 @@
     <header>
       <div class="header">
         <h1>Salmon Cookie Sales</h1>
-        <img src="img/salmon.png" alt="Image of a salmon side profile" />
+        <!-- <img src="img/salmon.png" alt="Image of a salmon side profile" /> -->
         <nav>
         </nav>
       </div>
     </header>
-
     <h2> Sales </h2>
     <table>
       <thead>
@@ -32,15 +31,32 @@
         <th></th>
       </thead>
       <tbody>
-
+        
       </tbody>
       <tfoot>
-
+        
       </tfoot>
-      <table>
-        <label> Pick a store
-          <input type="pick a store">
-        </label>
+    </table>
+        <form>
+          <fieldset>
+
+            <legend> Add a new store </legend>
+            <label for="Add">Add a store:</label><br>
+            <input type="text" id="Add" name="Add"><br>
+  
+            <label for="Min">Add a Min:</label><br>
+            <input type="text" id="Min" name="Min"><br>
+  
+            <label for="Max">Add a Max:</label><br>
+            <input type="text" id="Max" name="Max"><br>
+  
+            <label for="Avg">Add a Avg:</label><br>
+            <input type="text" id="Avg" name="Avg"><br>
+  
+            <input type="submit" id="Submit"><br>
+
+          </fieldset>
+        </form>
         <footer>
         </footer>
         <script src="js/app.js"></script>
