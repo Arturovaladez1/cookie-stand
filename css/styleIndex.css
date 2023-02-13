@@ -1,0 +1,73 @@
+h1 {
+  color: rgb(183, 82, 28);
+  /* color: rgb(67, 81, 37); */
+
+   text-align: center;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color:rgb(67, 81, 37); */
+  /* background-color:rgb(183, 82, 28); */
+
+  width: fit-content;
+  margin-left: 450px;
+  padding:10px;
+}
+
+
+img {
+  width: 300px;
+  height: 300px;
+  
+}
+
+  body {
+    background-color: rgb(205, 175, 105);
+    /* background: url(/img/salmon.png); */
+    
+    
+    
+  }
+
+  nav {
+    font-size: 20px;
+    color: rgb(67, 81, 37);
+    background-color: rgb(67, 81, 37);
+    height: 80px;
+
+  }
+
+  footer {
+    background-color: rgb(67, 81, 37);
+    height: 160px;
+  }
+
+  ul li  {
+    color: rgb(183, 82, 28);
+    display: inline;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.body-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 2px solid red; */
+  width: 800px;
+  margin: 0 auto;
+}
+
+
+
+.cardholder{
+  width: 100%;
+  /* border: 1px solid palegreen; */
+  display: flex;
+  /* flex-wrap: wrap; */
+
+}
+
+img {
+  float: left;
+  margin: 10px;
+}

@@ -2,13 +2,17 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: rgb(205, 175, 105);
+}
 
 
 table {
   background-color: rgb(183, 82, 28);
   opacity: 80%;
-  border width: thick;
-  border: solid rgb(213, 128, 0);
+  border: solid rgb(199, 150, 43);
+  border-width: 7px;
+  
 
 }
 
@@ -18,7 +22,73 @@ main {
   width: 50vw;
 }
 
-.header h1 {
-  text text-align: center;
-  text color
+h1 {
+color: rgb(183, 82, 28);
+font-size: 50px;
+margin-left: 10px;
+}
+
+h2 {
+  color: rgb(183, 82, 28);
+  font-weight:bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 30px;
+}
+
+
+fieldset{
+  color: rgb(67, 81, 37);
+/* color:rgb(183, 82, 28); */
+/* background-color: rgb(67, 81, 37); */
+background-color: rgba(183, 82, 28, 0.797);
+font-family: Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size: 18px;
+border: solid rgb(199, 150, 43);
+border-width: 7px;
+margin-top: 70px;
+/* float:right; */
+width: fit-content;
+margin-left: 220px;
+
+}
+
+div.header {
+  display: flex;
+  border: 10px solid rgb(199, 150, 43);
+  background-color: rgb(67, 81, 37);
+  
+}
+
+legend {
+  background-color: rgb(67, 81, 37);
+  color: rgb(183, 82, 28);
+  border: 2px solid rgb(199, 150, 43);
+  
+
+}
+
+br,#Add {
+  background-color: rgba(67, 81, 37, 0.548);
+
+}
+
+br,#Min {
+  background-color:rgb(67, 81, 37, 0.548);
+
+}
+
+br,#Max {
+  background-color: rgb(67, 81, 37,0.548);
+
+}
+
+br,#Avg {
+  background-color: rgb(67, 81, 37,0.548);
+
+}
+
+br,#Submit {
+  background-color: rgb(199, 150, 43);
+
 }
